@@ -121,10 +121,10 @@ backend/
 
 ## 👨‍🚀 Author
 
-Built with 💫 by [Your Name](https://github.com/YOUR_USERNAME)
+Built with 💫 by Adrian Jandongan(https://github.com/aeejhay)
 
 ---
 
 ## 📄 License
 
-MIT License
+
