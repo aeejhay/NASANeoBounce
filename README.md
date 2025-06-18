@@ -121,7 +121,7 @@ backend/
 
 ## 👨‍🚀 Author
 
-Built with 💫 by Adrian Jandongan(https://github.com/aeejhay)
+Built with 💫 by [Adrian Jandongan](https://adrianjandongan.me)
 
 ---
 
