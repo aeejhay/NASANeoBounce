@@ -34,7 +34,7 @@ const HistoricalTracker = () => {
       setHistoricalData(response.data.data);
     } catch (err) {
       if (retries > 0) {
-        setTimeout(() => fetchHistoricalData(retries - 1), 5000); // retry after 5s
+        setTimeout(() => fetchHistoricalData(retries - 1), 50000); // retry after 50s
       } else {
         setError(
           (err.response?.data?.message || 'Failed to fetch historical data.') +

@@ -26,7 +26,7 @@ const AsteroidDashboard = () => {
       setAsteroids(response.data.asteroids);
     } catch (err) {
       if (retries > 0) {
-        setTimeout(() => fetchAsteroids(date, retries - 1), 5000); // retry after 5s
+        setTimeout(() => fetchAsteroids(date, retries - 1), 50000); // retry after 50s
       } else {
         setError(
           (err.response?.data?.message || 'Failed to fetch asteroid data.') +
