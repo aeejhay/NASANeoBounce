@@ -1,0 +1,143 @@
+.asteroid-list {
+  width: 100%;
+}
+
+.table-container {
+  overflow-x: auto;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.asteroid-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.asteroid-table th {
+  background: rgba(33, 150, 243, 0.2);
+  color: #ffffff;
+  padding: 1rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.asteroid-table th.sortable {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.asteroid-table th.sortable:hover {
+  background: rgba(33, 150, 243, 0.3);
+}
+
+.asteroid-table td {
+  padding: 1rem 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  vertical-align: top;
+}
+
+.asteroid-table tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.asteroid-table tr.hazardous {
+  background: rgba(244, 67, 54, 0.1);
+  border-left: 4px solid #f44336;
+}
+
+.asteroid-table tr.hazardous:hover {
+  background: rgba(244, 67, 54, 0.15);
+}
+
+.asteroid-name {
+  font-weight: 600;
+  color: #64b5f6;
+}
+
+.asteroid-icon {
+  margin-right: 0.5rem;
+}
+
+.hazard-badge {
+  background: rgba(244, 67, 54, 0.2);
+  color: #ffcdd2;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+.safe-badge {
+  background: rgba(76, 175, 80, 0.2);
+  color: #c8e6c9;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.distance-info,
+.diameter-info,
+.approach-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.lunar-distance,
+.avg-diameter,
+.orbiting-body {
+  font-size: 0.8rem;
+  color: #b3e5fc;
+  opacity: 0.8;
+}
+
+.no-asteroids {
+  text-align: center;
+  padding: 2rem;
+  color: #b3e5fc;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .asteroid-table {
+    font-size: 0.8rem;
+  }
+  
+  .asteroid-table th,
+  .asteroid-table td {
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .asteroid-name {
+    min-width: 120px;
+  }
+  
+  .distance-info,
+  .diameter-info,
+  .approach-info {
+    min-width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .asteroid-table {
+    font-size: 0.7rem;
+  }
+  
+  .asteroid-table th,
+  .asteroid-table td {
+    padding: 0.5rem 0.25rem;
+  }
+  
+  .hazard-badge,
+  .safe-badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+  }
+} 

@@ -1,0 +1,147 @@
+.historical-tracker {
+  width: 100%;
+}
+
+.historical-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.historical-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.chart-container {
+  width: 100%;
+  height: 400px;
+  margin-bottom: 1rem;
+}
+
+.data-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.summary-label {
+  font-weight: 500;
+  color: #b3e5fc;
+}
+
+.summary-value {
+  font-weight: 600;
+  color: #ffffff;
+  text-align: right;
+}
+
+.daily-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.daily-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.daily-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.daily-date {
+  font-weight: 600;
+  color: #64b5f6;
+}
+
+.daily-stats {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
+.daily-count {
+  color: #b3e5fc;
+}
+
+.daily-hazardous {
+  color: #ffcdd2;
+}
+
+.no-data {
+  text-align: center;
+  padding: 2rem;
+  color: #b3e5fc;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .historical-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .historical-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .chart-container {
+    height: 300px;
+  }
+  
+  .summary-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  
+  .summary-value {
+    text-align: left;
+  }
+  
+  .daily-item {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  
+  .daily-stats {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-container {
+    height: 250px;
+  }
+  
+  .daily-breakdown {
+    max-height: 200px;
+  }
+} 
