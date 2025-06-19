@@ -7,6 +7,8 @@ import AsteroidChart from './AsteroidChart';
 import HazardWidget from './HazardWidget';
 import './AsteroidDashboard.css';
 
+const API_URL = process.env.REACT_APP_API_URL || '';
+
 const AsteroidDashboard = () => {
   const [asteroids, setAsteroids] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -20,7 +22,7 @@ const AsteroidDashboard = () => {
     
     try {
       const formattedDate = date.toISOString().split('T')[0];
-      const response = await axios.get(`/api/neos?date=${formattedDate}`);
+      const response = await axios.get(`${API_URL}/api/neos?date=${formattedDate}`);
       setAsteroids(response.data.asteroids);
     } catch (err) {
       setError(err.response?.data?.message || 'Failed to fetch asteroid data');

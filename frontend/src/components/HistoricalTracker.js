@@ -13,6 +13,8 @@ import {
 } from 'recharts';
 import './HistoricalTracker.css';
 
+const API_URL = process.env.REACT_APP_API_URL || '';
+
 const HistoricalTracker = () => {
   const [historicalData, setHistoricalData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -28,7 +30,7 @@ const HistoricalTracker = () => {
     setError(null);
     
     try {
-      const response = await axios.get('/api/neos/historical');
+      const response = await axios.get(`${API_URL}/api/neos/historical`);
       setHistoricalData(response.data.data);
     } catch (err) {
       setError(err.response?.data?.message || 'Failed to fetch historical data');

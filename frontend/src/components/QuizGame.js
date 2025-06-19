@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './QuizGame.css';
 
+const API_URL = process.env.REACT_APP_API_URL || '';
+
 const QuizGame = () => {
   const [asteroids, setAsteroids] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -17,7 +19,7 @@ const QuizGame = () => {
 
   const fetchAsteroids = async () => {
     try {
-      const response = await axios.get('/api/neos');
+      const response = await axios.get(`${API_URL}/api/neos`);
       setAsteroids(response.data.asteroids);
     } catch (error) {
       console.error('Failed to fetch asteroids for quiz:', error);
