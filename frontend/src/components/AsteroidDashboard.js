@@ -16,7 +16,7 @@ const AsteroidDashboard = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [chartType, setChartType] = useState('velocity');
 
-  const fetchAsteroids = async (date) => {
+  const fetchAsteroids = async (date, retries = 2) => {
     setLoading(true);
     setError(null);
     
@@ -25,7 +25,14 @@ const AsteroidDashboard = () => {
       const response = await axios.get(`${API_URL}/api/neos?date=${formattedDate}`);
       setAsteroids(response.data.asteroids);
     } catch (err) {
-      setError(err.response?.data?.message || 'Failed to fetch asteroid data');
+      if (retries > 0) {
+        setTimeout(() => fetchAsteroids(date, retries - 1), 5000); // retry after 5s
+      } else {
+        setError(
+          (err.response?.data?.message || 'Failed to fetch asteroid data.') +
+          ' If this is your first request in a while, the server may be waking up. Please try again.'
+        );
+      }
     } finally {
       setLoading(false);
     }

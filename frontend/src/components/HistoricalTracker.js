@@ -25,7 +25,7 @@ const HistoricalTracker = () => {
     fetchHistoricalData();
   }, []);
 
-  const fetchHistoricalData = async () => {
+  const fetchHistoricalData = async (retries = 2) => {
     setLoading(true);
     setError(null);
     
@@ -33,7 +33,14 @@ const HistoricalTracker = () => {
       const response = await axios.get(`${API_URL}/api/neos/historical`);
       setHistoricalData(response.data.data);
     } catch (err) {
-      setError(err.response?.data?.message || 'Failed to fetch historical data');
+      if (retries > 0) {
+        setTimeout(() => fetchHistoricalData(retries - 1), 5000); // retry after 5s
+      } else {
+        setError(
+          (err.response?.data?.message || 'Failed to fetch historical data.') +
+          ' If this is your first request in a while, the server may be waking up. Please try again.'
+        );
+      }
     } finally {
       setLoading(false);
     }
