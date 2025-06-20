@@ -88,8 +88,8 @@ npm start
 ```
 
 ### 5. Access the Application
-- Frontend: http://localhost:3000 / https://nasa-neo-bounce.vercel.app/ via Vercel
-- Backend API: http://localhost:5000 / https://nasaneobounce.onrender.com via Render
+- Frontend: https://nasa-neo-bounce.vercel.app/ via Vercel
+- Backend API: https://nasaneobounce.onrender.com via Render
 
 ## 📁 Project Structure
 
@@ -264,9 +264,9 @@ The application is fully responsive and works on:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
+## 👨‍💻 Developed By
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project was developed by **Adrian Jandongan** ([www.adrianjandongan.me](https://www.adrianjandongan.me)) as a coding challenge for **Bounce Insights**.
 
 ## 🙏 Acknowledgments
 
