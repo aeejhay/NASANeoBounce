@@ -36,12 +36,12 @@ A full-stack web application for monitoring Near-Earth Objects (NEOs) using NASA
 
 ### Prerequisites
 - Node.js (v14 or higher)
-- npm or yarn
+- npm
 - NASA API key (free from [api.nasa.gov](https://api.nasa.gov/))
 
 ### 1. Clone the Repository
 ```bash
-git clone <repository-url>
+git clone https://github.com/aeejhay/NASANeoBounce.git
 cd nasa-neo-bounce
 ```
 
@@ -95,26 +95,60 @@ npm start
 
 ```
 nasa-neo-bounce/
-├── backend/
-│   ├── server.js              # Express server with NEO API endpoints
-│   ├── package.json           # Backend dependencies
-│   └── .env                   # Environment variables (create this)
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── AsteroidDashboard.js    # Main dashboard component
-│   │   │   ├── AsteroidList.js         # Asteroid table component
-│   │   │   ├── AsteroidChart.js        # Chart visualization
+├── backend/                      # Node.js/Express backend
+│   ├── server.js                 # Express server with NEO API endpoints
+│   ├── package.json              # Backend dependencies and scripts
+│   ├── package-lock.json         # Backend lockfile
+│   └── .env                      # Environment variables (create this manually)
+│
+├── frontend/                     # React frontend
+│   ├── public/                   # Static assets and HTML template
+│   │   ├── favicon.ico
+│   │   ├── index.html            # Main HTML file
+│   │   ├── logo192.png
+│   │   ├── logo512.png
+│   │   ├── manifest.json
+│   │   └── robots.txt
+│   ├── src/                      # React source code
+│   │   ├── components/           # Reusable React components
+│   │   │   ├── AsteroidDashboard.js    # Main dashboard UI
+│   │   │   ├── AsteroidDashboard.css   # Dashboard styles
+│   │   │   ├── AsteroidList.js         # Asteroid table
+│   │   │   ├── AsteroidList.css        # Table styles
+│   │   │   ├── AsteroidChart.js        # Chart visualizations
+│   │   │   ├── AsteroidChart.css       # Chart styles
 │   │   │   ├── HazardWidget.js         # Hazard assessment widget
-│   │   │   ├── HistoricalTracker.js    # Historical data component
-│   │   │   ├── QuizGame.js             # Interactive quiz component
-│   │   │   └── *.css                   # Component-specific styles
-│   │   ├── App.js                      # Main app with routing
-│   │   ├── App.css                     # Global styles
-│   │   └── index.js                    # React entry point
-│   └── package.json                    # Frontend dependencies
-└── README.md                          # This file
+│   │   │   ├── HazardWidget.css        # Widget styles
+│   │   │   ├── HistoricalTracker.js    # 7-day history component
+│   │   │   ├── HistoricalTracker.css   # History styles
+│   │   │   ├── QuizGame.js             # Educational quiz
+│   │   │   └── QuizGame.css            # Quiz styles
+│   │   ├── App.js                # Main React app and routing
+│   │   ├── App.css               # Global styles
+│   │   ├── index.js              # React entry point
+│   │   ├── index.css             # Entry point styles
+│   │   ├── logo.svg              # App logo
+│   │   ├── reportWebVitals.js    # Performance measuring
+│   │   └── setupTests.js         # Test setup
+│   ├── package.json              # Frontend dependencies and scripts
+│   ├── package-lock.json         # Frontend lockfile
+│   └── README.md                 # Frontend-specific info (optional)
+│
+├── package-lock.json             # Root lockfile (if present)
+├── README.md                     # Project documentation (this file)
+
 ```
+
+- **backend/**: Contains all backend code, Express server, and environment config.
+- **frontend/**: Contains all frontend React code, static assets, and components.
+- **public/**: Static files served by React (favicon, HTML, manifest, etc).
+- **src/components/**: All major UI components, each with its own JS and CSS.
+- **App.js**: Main React app, handles routing and layout.
+- **server.js**: Main Express server, handles API routes and logic.
+- **.env**: Store sensitive keys (not committed to git).
+- **README.md**: Project overview, setup, and documentation.
+
+> Create the `.env` file manually in the backend directory as described in setup instructions.
 
 ## 🔧 API Endpoints
 
